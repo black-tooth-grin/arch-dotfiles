@@ -1,0 +1,3 @@
+sudo efibootmgr --create --disk /dev/sda --part 1 --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=/dev/sda3 home=/dev/sda4 resume=/dev/sda2 rw initrd=\initramfs-linux.img quiet loglevel=3 systemd.show_status=auto rd.udev.log_level=3 nowatchdog acpi_backlight=video i915.fastboot=1'
+
+sudo efibootmgr --delete-bootnum --bootnum 0

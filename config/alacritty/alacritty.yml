@@ -1,0 +1,88 @@
+env:
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 10
+    y: 8
+  dynamic_padding: true
+
+  dimensions:
+    columns: 0
+    lines: 0
+  decorations: full
+  
+  scrolling:
+    history: 10000
+    multiplier: 3
+
+# Font configuration (changes require restart)
+font:
+  # The normal (roman) font face to use.
+  # Style can be specified to pick a specific face.
+  normal:
+    family: "notosansmono"
+    style: "Regular"
+
+  # The bold font face
+  bold:
+    family: "NotoSansMono"
+    style: "Bold"
+  # The italic font face
+  italic:
+    family: "NotoSansMono"
+    style: "Bold Italic"
+  # Point size of the font
+  size: 9
+  offset:
+    x: 0
+    y: 0  
+# When true, bold text is drawn using the bright variant of colors.
+#draw_bold_text_with_bright_colors: true
+colors:
+  primary:
+    background: '#000000'
+      #foreground: '#00ff00'
+    foreground: '#bfc3c8'
+      #foreground: '#9E9E9E'  
+
+  # Normal colors
+  normal:
+   black: '#2e3436'
+   red: '#cc0000'
+   green: '#73d216'
+   yellow: '#edd400'
+   blue: '#3465a4'
+   magenta: '#75507b'
+   cyan: '#06989a'
+   white: '#d3d7cf'
+
+  # Bright colors
+  bright:
+   black: '#2e3436'
+   red: '#ef2929'
+   green: '#8ae234'
+   yellow: '#fce94f'
+   blue: '#729fcf'
+   magenta: '#ad7fa8'
+   cyan: '#34e2e2'
+   white: '#eeeeec'
+
+mouse: 
+  hide_when_typing: true
+
+selection:
+  save_to_clipboard: true
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+live_config_reload: true
+
+shell:
+  program: /bin/bash
+
+key_bindings:
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }

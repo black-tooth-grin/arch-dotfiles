@@ -1,0 +1,45 @@
+#!/bin/bash
+OPTION=$1
+
+function backup() {
+	pacman -Qen > arch.packages
+	pacman -Qem > aur.packages
+	rsync -ahr ~/.config/{i3,i3status-rust,ranger,rofi,lock.sh,picom.conf,dunst,alacritty,nvim,mpv} config/
+	rsync -ahr ~/{.bashrc,.tmux.conf} .
+	sudo rsync -ahr /etc/{X11,bash.bashrc,mkinitcpio.conf,modprobe.d} etc/
+	sudo rsync -ahr /boot/loader/entries boot/loader/
+}
+
+function push() {
+	
+
+#function configurations() {}
+
+#function restore() {}
+
+
+
+function default() {
+	echo -e "Available options:
+	a. Take backup >> ./dotfiles backup
+	b. Restore configs >> ./dotfiles restore
+	c. Push configuration to github >> ./dotfiles push"
+}
+	
+case $OPTION in
+	backup)
+		backup
+		;;
+	restore)
+		restore
+		;;
+	screenshot)
+		screenshot
+		;;
+	push)
+		push
+		;;
+	*)
+		default
+		;;
+esac
